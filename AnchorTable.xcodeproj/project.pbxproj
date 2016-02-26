@@ -20,7 +20,6 @@
 		7FA3FA9D1C7FF2E100245AD8 /* CustomUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA3FA9C1C7FF2E100245AD8 /* CustomUIButton.m */; };
 		7FA3FA9F1C7FF51400245AD8 /* pausebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA3FA9E1C7FF51400245AD8 /* pausebutton.png */; };
 		7FA3FAA31C80056900245AD8 /* BlankAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA3FAA21C80056900245AD8 /* BlankAvatar.png */; };
-		7FA3FAA51C80111E00245AD8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA3FAA41C80111E00245AD8 /* QuartzCore.framework */; };
 		7FA3FAAC1C801C0200245AD8 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FA3FAAB1C801C0200245AD8 /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FA3FAA51C80111E00245AD8 /* QuartzCore.framework in Frameworks */,
 				7FA3FA9A1C7FC58000245AD8 /* AVFoundation.framework in Frameworks */,
 				4E3B5C9EAB1523F66E443869 /* libPods.a in Frameworks */,
 			);
