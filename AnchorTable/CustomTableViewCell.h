@@ -10,6 +10,7 @@
 
 @protocol CustomTableViewCellDelegate <NSObject>
 - (void)userDidTapPlayWithWaveId:(NSInteger)waveId;
+- (void)userDidPause;
 @end
 
 @interface CustomTableViewCell : UITableViewCell

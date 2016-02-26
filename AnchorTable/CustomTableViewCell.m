@@ -11,18 +11,21 @@
 @implementation CustomTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
-}
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (IBAction)userDidTapPlayWithWaveId:(id)sender {
+    BOOL newSelectedState = !self.playButton.selected;
+    
+    [self.playButton setSelected:newSelectedState];
+    
     if (self.delegate) {
-        [self.delegate userDidTapPlayWithWaveId:self.waveId];
+        if (newSelectedState) {
+            [self.delegate userDidTapPlayWithWaveId:self.waveId];
+        } else {
+            [self.delegate userDidPause];
+        }
+
     }
 }
 

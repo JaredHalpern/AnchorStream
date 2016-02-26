@@ -25,6 +25,12 @@ static NSString *cellIdentifier = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    AVPlayerItem *playerItem = nil;
+    self.avPlayer = [AVPlayer playerWithPlayerItem:playerItem];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackComplete:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+    [self.avPlayer addObserver:self forKeyPath:@"rate" options:NSKeyValueObservingOptionNew context:NULL];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -63,6 +69,10 @@ static NSString *cellIdentifier = @"cell";
     }
 }
 
+- (void)userDidPause {
+    [self.avPlayer pause];
+}
+
 #pragma mark - UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -99,14 +109,35 @@ static NSString *cellIdentifier = @"cell";
 - (void)playAudioURL:(NSURL *)audioURL {
     
     AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:audioURL];
-    self.avPlayer = [AVPlayer playerWithPlayerItem:playerItem];
+
+    [self.avPlayer replaceCurrentItemWithPlayerItem:playerItem];
     [self.avPlayer play];
+}
+
+- (void)playbackComplete:(id)note {
+
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+
+    if ([keyPath isEqualToString:kKeyNameRate]) {
+        
+        CGFloat rate = [change[NSKeyValueChangeNewKey] floatValue];
+        
+        if (rate == 0.0) {
+            // Stopped
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationResetAllButtonStates object:nil];
+        } else if (rate == 1.0) {
+            // Normal
+        }
+    }
 }
 
 #pragma mark - Private
 
 - (void)dealloc {
-    // remove observers from KVO
+    [self removeObserver:self forKeyPath:kKeyNameRate];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

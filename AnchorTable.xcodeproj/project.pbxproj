@@ -18,6 +18,8 @@
 		7FA3FA941C7FC21100245AD8 /* playbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA3FA931C7FC21100245AD8 /* playbutton.png */; };
 		7FA3FA971C7FC2A500245AD8 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA3FA961C7FC2A500245AD8 /* CustomTableViewCell.m */; };
 		7FA3FA9A1C7FC58000245AD8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA3FA991C7FC57F00245AD8 /* AVFoundation.framework */; };
+		7FA3FA9D1C7FF2E100245AD8 /* CustomUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA3FA9C1C7FF2E100245AD8 /* CustomUIButton.m */; };
+		7FA3FA9F1C7FF51400245AD8 /* pausebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA3FA9E1C7FF51400245AD8 /* pausebutton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,9 @@
 		7FA3FA951C7FC2A500245AD8 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		7FA3FA961C7FC2A500245AD8 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		7FA3FA991C7FC57F00245AD8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7FA3FA9B1C7FF2E100245AD8 /* CustomUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomUIButton.h; sourceTree = "<group>"; };
+		7FA3FA9C1C7FF2E100245AD8 /* CustomUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomUIButton.m; sourceTree = "<group>"; };
+		7FA3FA9E1C7FF51400245AD8 /* pausebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pausebutton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +102,7 @@
 		7FA3FA761C7F634100245AD8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7FA3FA9E1C7FF51400245AD8 /* pausebutton.png */,
 				7FA3FA931C7FC21100245AD8 /* playbutton.png */,
 				7FA3FA771C7F634100245AD8 /* main.m */,
 				7FA3FA921C7F916800245AD8 /* PrefixHeader.pch */,
@@ -116,6 +122,8 @@
 		7FA3FA981C7FC3E300245AD8 /* Custom UIKit Objects */ = {
 			isa = PBXGroup;
 			children = (
+				7FA3FA9B1C7FF2E100245AD8 /* CustomUIButton.h */,
+				7FA3FA9C1C7FF2E100245AD8 /* CustomUIButton.m */,
 				7FA3FA951C7FC2A500245AD8 /* CustomTableViewCell.h */,
 				7FA3FA961C7FC2A500245AD8 /* CustomTableViewCell.m */,
 			);
@@ -202,6 +210,7 @@
 			files = (
 				7FA3FA861C7F634100245AD8 /* LaunchScreen.storyboard in Resources */,
 				7FA3FA831C7F634100245AD8 /* Assets.xcassets in Resources */,
+				7FA3FA9F1C7FF51400245AD8 /* pausebutton.png in Resources */,
 				7FA3FA811C7F634100245AD8 /* Main.storyboard in Resources */,
 				7FA3FA941C7FC21100245AD8 /* playbutton.png in Resources */,
 			);
@@ -266,6 +275,7 @@
 				7FA3FA7E1C7F634100245AD8 /* ViewController.m in Sources */,
 				7FA3FA7B1C7F634100245AD8 /* AppDelegate.m in Sources */,
 				7FA3FA971C7FC2A500245AD8 /* CustomTableViewCell.m in Sources */,
+				7FA3FA9D1C7FF2E100245AD8 /* CustomUIButton.m in Sources */,
 				7FA3FA781C7F634100245AD8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

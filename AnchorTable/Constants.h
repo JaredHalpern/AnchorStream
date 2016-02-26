@@ -10,16 +10,23 @@
 #define Constants_h
 
 
-#define kBaseURLString              @"https://anchor.fm/challenges/ios"
+#define kBaseURLString                          @"https://anchor.fm/challenges/ios"
 
 
-#pragma mark - Keys
+#pragma mark - Dictionary Keys
 
-#define kKeyAudioUrl                @"audioUrl"
-#define kKeyPhotoUrl                @"photoUrl"
-#define kKeyUserId                  @"userId"
-#define kKeyUserName                @"userName"
-#define kKeyWaveId                  @"waveId"
+#define kKeyAudioUrl                            @"audioUrl"
+#define kKeyPhotoUrl                            @"photoUrl"
+#define kKeyUserId                              @"userId"
+#define kKeyUserName                            @"userName"
+#define kKeyWaveId                              @"waveId"
 
+#pragma mark - KVO Key-Paths
+
+#define kKeyNameRate                            @"rate"
+
+#pragma mark - NSNotifications
+
+#define kNotificationResetAllButtonStates       @"resetAllButtonStates"
 
 #endif /* Constants_h */
