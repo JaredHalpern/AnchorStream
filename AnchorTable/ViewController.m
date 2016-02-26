@@ -75,10 +75,6 @@ static NSString *cellIdentifier = @"cell";
 
 #pragma mark - UITableViewDelegate
 
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    UIView *headerView = [UIView alloc] init
-//}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 50;
 }
@@ -135,7 +131,6 @@ static NSString *cellIdentifier = @"cell";
             [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationResetAllButtonStates object:nil];
         } else if (rate == 1.0) {
             // Normal
-            // do some cool visualization here...
         }
     }
 }
