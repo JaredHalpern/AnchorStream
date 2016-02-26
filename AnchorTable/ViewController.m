@@ -64,7 +64,7 @@ static NSString *cellIdentifier = @"cell";
             
             // we've found our wave. now play it.
             [self playAudioURL:[NSURL URLWithString:[waveObject objectForKey:kKeyAudioUrl]]];
-            [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationResetAllButtonStates object:nil userInfo:@{@"waveId" : [waveObject objectForKey:kKeyWaveId]}];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationResetAllButtonStates object:nil userInfo:@{kKeyWaveId : [waveObject objectForKey:kKeyWaveId]}];
         }
     }
 }

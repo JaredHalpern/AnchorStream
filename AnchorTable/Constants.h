@@ -9,9 +9,9 @@
 #ifndef Constants_h
 #define Constants_h
 
+#pragma mark - API related
 
 #define kBaseURLString                          @"https://anchor.fm/challenges/ios"
-
 
 #pragma mark - Dictionary Keys
 

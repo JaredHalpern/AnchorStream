@@ -25,7 +25,6 @@
         } else {
             [self.delegate userDidPause];
         }
-
     }
 }
 
