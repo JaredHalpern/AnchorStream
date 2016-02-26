@@ -26,11 +26,10 @@ static NSString *cellIdentifier = @"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // create an AVPlayer with no PlayerItem here so we can add an observer to it.
     AVPlayerItem *playerItem = nil;
     self.avPlayer = [AVPlayer playerWithPlayerItem:playerItem];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackComplete:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
-    [self.avPlayer addObserver:self forKeyPath:@"rate" options:NSKeyValueObservingOptionNew context:NULL];
+    [self.avPlayer addObserver:self forKeyPath:kKeyNameRate options:NSKeyValueObservingOptionNew context:NULL];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -65,6 +64,7 @@ static NSString *cellIdentifier = @"cell";
             
             // we've found our wave. now play it.
             [self playAudioURL:[NSURL URLWithString:[waveObject objectForKey:kKeyAudioUrl]]];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationResetAllButtonStates object:nil userInfo:@{@"waveId" : [waveObject objectForKey:kKeyWaveId]}];
         }
     }
 }
@@ -73,11 +73,21 @@ static NSString *cellIdentifier = @"cell";
     [self.avPlayer pause];
 }
 
+#pragma mark - UITableViewDelegate
+
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    UIView *headerView = [UIView alloc] init
+//}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50;
+}
+
 #pragma mark - UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    CustomTableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 
     if (!cell) {
         cell = [[CustomTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
@@ -86,7 +96,7 @@ static NSString *cellIdentifier = @"cell";
     NSMutableDictionary *waveDict = self.dataSourceArray[indexPath.row];
     
     NSURL *imageURL = [NSURL URLWithString:[(NSString *)waveDict valueForKey:kKeyPhotoUrl]];
-    [cell.imageView setImageWithURL:imageURL placeholderImage:nil];
+    [cell.imageView setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"BlankAvatar.png"]];
     
     cell.textLabel.text = [waveDict valueForKey:kKeyUserName];
     cell.userId = [[waveDict valueForKey:kKeyUserId] integerValue];
@@ -114,10 +124,6 @@ static NSString *cellIdentifier = @"cell";
     [self.avPlayer play];
 }
 
-- (void)playbackComplete:(id)note {
-
-}
-
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
 
     if ([keyPath isEqualToString:kKeyNameRate]) {
@@ -129,6 +135,7 @@ static NSString *cellIdentifier = @"cell";
             [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationResetAllButtonStates object:nil];
         } else if (rate == 1.0) {
             // Normal
+            // do some cool visualization here...
         }
     }
 }
@@ -137,7 +144,6 @@ static NSString *cellIdentifier = @"cell";
 
 - (void)dealloc {
     [self removeObserver:self forKeyPath:kKeyNameRate];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

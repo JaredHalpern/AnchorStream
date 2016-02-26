@@ -11,7 +11,7 @@
 @implementation CustomTableViewCell
 
 - (void)awakeFromNib {
-
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetButtonState:) name:kNotificationResetAllButtonStates object:nil];
 }
 
 - (IBAction)userDidTapPlayWithWaveId:(id)sender {
@@ -27,6 +27,21 @@
         }
 
     }
+}
+
+#pragma mark -
+
+- (void)resetButtonState:(NSNotification *)note {
+
+    NSDictionary *payloadDict = note.userInfo;
+
+    if ([payloadDict[@"waveId"] integerValue] != self.waveId) {
+        [self.playButton setSelected:NO];
+    }
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

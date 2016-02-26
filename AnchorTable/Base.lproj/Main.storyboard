@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="cell" id="44E-rP-0iO" customClass="CustomTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="44E-rP-0iO" customClass="CustomTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="44E-rP-0iO" id="t8E-LD-sC8">
@@ -54,16 +54,16 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="k31-k0-M9b" firstAttribute="top" secondItem="t8E-LD-sC8" secondAttribute="topMargin" constant="-1" id="9qg-EM-NH6"/>
                                                 <constraint firstItem="k31-k0-M9b" firstAttribute="leading" secondItem="t8E-LD-sC8" secondAttribute="leadingMargin" constant="169" id="Riv-zd-YGa"/>
+                                                <constraint firstItem="k31-k0-M9b" firstAttribute="centerY" secondItem="t8E-LD-sC8" secondAttribute="centerY" id="uha-0X-Pkg"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="k31-k0-M9b"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="9qg-EM-NH6"/>
                                                     <exclude reference="Riv-zd-YGa"/>
+                                                    <exclude reference="uha-0X-Pkg"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -71,8 +71,8 @@
                                                     <include reference="k31-k0-M9b"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="9qg-EM-NH6"/>
                                                     <include reference="Riv-zd-YGa"/>
+                                                    <include reference="uha-0X-Pkg"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>

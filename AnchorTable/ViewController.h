@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CustomTableViewCell.h"
 
-@interface ViewController : UIViewController <UITableViewDataSource, CustomTableViewCellDelegate>
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, CustomTableViewCellDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView            *tableView;
 

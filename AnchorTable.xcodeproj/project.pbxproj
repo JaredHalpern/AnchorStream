@@ -20,6 +20,7 @@
 		7FA3FA9A1C7FC58000245AD8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA3FA991C7FC57F00245AD8 /* AVFoundation.framework */; };
 		7FA3FA9D1C7FF2E100245AD8 /* CustomUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA3FA9C1C7FF2E100245AD8 /* CustomUIButton.m */; };
 		7FA3FA9F1C7FF51400245AD8 /* pausebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA3FA9E1C7FF51400245AD8 /* pausebutton.png */; };
+		7FA3FAA31C80056900245AD8 /* BlankAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA3FAA21C80056900245AD8 /* BlankAvatar.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		7FA3FA9B1C7FF2E100245AD8 /* CustomUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomUIButton.h; sourceTree = "<group>"; };
 		7FA3FA9C1C7FF2E100245AD8 /* CustomUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomUIButton.m; sourceTree = "<group>"; };
 		7FA3FA9E1C7FF51400245AD8 /* pausebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pausebutton.png; sourceTree = "<group>"; };
+		7FA3FAA21C80056900245AD8 /* BlankAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlankAvatar.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,15 +86,13 @@
 			isa = PBXGroup;
 			children = (
 				7FA3FA911C7F90F900245AD8 /* Constants.h */,
-				7FA3FA8D1C7F8D9200245AD8 /* Managers */,
-				7FA3FA981C7FC3E300245AD8 /* Custom UIKit Objects */,
 				7FA3FA791C7F634100245AD8 /* AppDelegate.h */,
 				7FA3FA7A1C7F634100245AD8 /* AppDelegate.m */,
-				7FA3FA7C1C7F634100245AD8 /* ViewController.h */,
-				7FA3FA7D1C7F634100245AD8 /* ViewController.m */,
-				7FA3FA7F1C7F634100245AD8 /* Main.storyboard */,
+				7FA3FA8D1C7F8D9200245AD8 /* Managers */,
+				7FA3FA981C7FC3E300245AD8 /* Custom UIKit Objects */,
+				7FA3FAA01C80022400245AD8 /* View Controllers */,
+				7FA3FAA11C80022D00245AD8 /* Storyboards */,
 				7FA3FA821C7F634100245AD8 /* Assets.xcassets */,
-				7FA3FA841C7F634100245AD8 /* LaunchScreen.storyboard */,
 				7FA3FA871C7F634100245AD8 /* Info.plist */,
 				7FA3FA761C7F634100245AD8 /* Supporting Files */,
 			);
@@ -102,6 +102,7 @@
 		7FA3FA761C7F634100245AD8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7FA3FAA21C80056900245AD8 /* BlankAvatar.png */,
 				7FA3FA9E1C7FF51400245AD8 /* pausebutton.png */,
 				7FA3FA931C7FC21100245AD8 /* playbutton.png */,
 				7FA3FA771C7F634100245AD8 /* main.m */,
@@ -128,6 +129,24 @@
 				7FA3FA961C7FC2A500245AD8 /* CustomTableViewCell.m */,
 			);
 			name = "Custom UIKit Objects";
+			sourceTree = "<group>";
+		};
+		7FA3FAA01C80022400245AD8 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7FA3FA7C1C7F634100245AD8 /* ViewController.h */,
+				7FA3FA7D1C7F634100245AD8 /* ViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		7FA3FAA11C80022D00245AD8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7FA3FA7F1C7F634100245AD8 /* Main.storyboard */,
+				7FA3FA841C7F634100245AD8 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		9A9FA2B3B37910DDEE7D9577 /* Frameworks */ = {
@@ -211,6 +230,7 @@
 				7FA3FA861C7F634100245AD8 /* LaunchScreen.storyboard in Resources */,
 				7FA3FA831C7F634100245AD8 /* Assets.xcassets in Resources */,
 				7FA3FA9F1C7FF51400245AD8 /* pausebutton.png in Resources */,
+				7FA3FAA31C80056900245AD8 /* BlankAvatar.png in Resources */,
 				7FA3FA811C7F634100245AD8 /* Main.storyboard in Resources */,
 				7FA3FA941C7FC21100245AD8 /* playbutton.png in Resources */,
 			);
